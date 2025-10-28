@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Background Remover</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- The main container for desktop view -->
+  <div id="main-content">
+    <div class="container">
+      <h1>🖌️ AI Background Remover</h1>
+      <p>Remove background from your images instantly!</p>
+
+      <!-- Upload Area -->
+      <div id="drop-area">
+        <p>Drag & Drop or Click to Upload</p>
+        <input type="file" id="fileElem" accept="image/*" />
+        <label class="button" for="fileElem">Upload Image</label>
+      </div>
+
+      <!-- Add a container div around the existing .samples div -->
+      <div class="samples-container">
+        <h3>Or try with sample images:</h3>
+        <div class="samples">
+          <img src="image/sample1.jpg" alt="Sample 1" class="sample" data-result="image/sample11.png" />
+          <img src="image/sample2.jpg" alt="Sample 2" class="sample" data-result="image/sample22.png" />
+          <img src="image/sample3.png" alt="Sample 3" class="sample" data-result="image/sample33.png" />
+        </div>
+      </div>
+
+      <!-- Preview and Result -->
+      <div id="preview-result-section" class="flex-container">
+        <div class="image-preview">
+          <h3>Original Image</h3>
+          <img id="preview" src="" alt="Uploaded image preview" />
+        </div>
+        <div class="image-preview" id="processed-image-section">
+          <h3>Processed Image</h3>
+          <div class="result-wrapper">
+            <img id="background-image" src="" alt="Background" />
+            <img id="result" src="" alt="Result image" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Background Controls -->
+      <div id="background-controls">
+        <label for="bgUpload">Customize Background Image:</label>
+        <input type="file" id="bgUpload" accept="image/*" />
+
+        <!-- Buttons above images -->
+        <div id="background-buttons">
+          <button class="bg-tab" id="image-tab">Image</button>
+          <button class="bg-tab" id="color-tab">Color</button>
+        </div>
+
+        <!-- Background image options -->
+        <div id="background-options">
+          <img src="image/background1.png" alt="Background 1" class="bg-choice" />
+          <img src="image/background2.jpg" alt="Background 2" class="bg-choice" />
+          <img src="image/background3.jpg" alt="Background 3" class="bg-choice" />
+          <img src="image/background4.png" alt="Background 4" class="bg-choice" />
+          <img src="image/background5.png" alt="Background 5" class="bg-choice" />
+          <img src="image/background6.png" alt="Background 6" class="bg-choice" />
+          <img src="image/background7.png" alt="Background 7" class="bg-choice" />
+          <img src="image/background8.png" alt="Background 8" class="bg-choice" />
+          <img src="image/bacground9.jpg" alt="Background 9" class="bg-choice" />
+          <img src="image/background10.jpg" alt="Background 10" class="bg-choice" />
+        </div>
+
+        <div id="color-options" style="display:none;">
+          <img src="color/blue.jpg" alt="Blue color" class="bg-choice" />
+          <img src="color/darkblue.jpg" alt="Dark Blue" class="bg-choice" />
+          <img src="color/green.jpg" alt="Green" class="bg-choice" />
+          <img src="color/lightblue.jpg" alt="Light Blue" class="bg-choice" />
+          <img src="color/lightyellow.jpg" alt="Light Yellow" class="bg-choice" />
+          <img src="color/multi.png" alt="Multi" class="bg-choice" />
+          <img src="color/multi1.png" alt="Multi 1" class="bg-choice" />
+          <img src="color/multi2.jpg" alt="Multi 2" class="bg-choice" />
+          <img src="color/orgage.jpg" alt="Orange" class="bg-choice" />
+          <img src="color/purple.jpg" alt="Purple" class="bg-choice" />
+          <img src="color/pink.jpg" alt="Pink" class="bg-choice" />
+          <img src="color/red.jpg" alt="Red" class="bg-choice" />
+        </div>
+
+        <!-- Undo, Redo, Reset buttons below images -->
+        <div id="background-action-buttons" style="margin-top: 20px;">
+          <button id="undo-btn" class="bg-tab">Undo</button>
+          <button id="redo-btn" class="bg-tab">Redo</button>
+          <button id="reset-btn" class="bg-tab">Reset Background</button>
+        </div>
+      </div>
+
+      <!-- History Section -->
+      <div id="background-history" style="margin-top: 30px;">
+        <h3>Background History</h3>
+        <div id="history-list" style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;"></div>
+
+        <div id="history-buttons" style="display: flex; justify-content: center; gap: 20px; margin-top: 10px;">
+          <a id="download" href="#" download="no-bg.png" class="button">Download</a>
+          <button id="clear-history-btn">Clear History</button>
+        </div>
+      </div>
+
+      <!-- Welcome Popup -->
+      <div id="welcome-popup">
+        <div class="popup-content">
+          <h2>Welcome to AI Background Remover</h2>
+          <button id="get-started-btn" class="bg-tab">Get Started</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
